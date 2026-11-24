@@ -1,0 +1,49 @@
+# 格式示例：对象为虚构产品Acme Docs，不得作为真实实验登记
+id: EXP-2026-12-01-acme
+family_id: DEMO-ACME-01
+title: Acme Docs模板详情页"用这个模板开始"按钮
+status: draft            # draft / registered / running / stopped
+evidence_level: E4
+hypothesis: 如果在模板详情页首屏加"用这个模板开始"按钮，那么访客14天内注册比例从4%提高到5%，因为它缩短了从浏览到开始的路径
+hypothesis_by: 团队成员A
+design_by: 团队成员A
+readout_by: 团队成员B
+variants:
+  - key: control
+    weight: 0.5
+    description: 现有页面
+  - key: treatment
+    weight: 0.5
+    description: 首屏加按钮
+assignment_unit: anonymous_id
+targeting: 模板详情页访客；排除已登录用户
+data_source: postgres_dw   # Segment同步写入的自建DW
+event_source: acme_web     # Segment source名（入仓schema）
+touchpoint: 模板详情页     # 与另一项在跑实验不同
+primary_metric:
+  gb_metric: acme_signup_14d
+  baseline: 0.04
+  mde_to: 0.05
+guardrails:
+  - acme_bounce_rate
+  - acme_unsubscribe_rate
+power:
+  alpha: 0.05
+  power: 0.8
+  consent_rate: 0.6
+  required_per_arm: 6745
+window:
+  start: 2026-12-01
+  days: 14
+  max_extend_to: 2026-12-21
+registration:
+  gb_experiment_id: ""
+  registered_at: ""
+decision_rules:
+  confirm: 置信区间排除零
+  refute: 置信区间上限低于最小可检出变化
+  inconclusive: 区间跨零且上限高于最小可检出变化
+feature_flag:
+  key: acme-template-start-button
+  default: false
+owner: 实验Owner姓名
