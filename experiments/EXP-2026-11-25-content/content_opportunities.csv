@@ -1,0 +1,4 @@
+﻿id,audience,question,asset,evidence,next_step,search_volume,status
+CONTENT-01,IP内容来访者,读完一份专利，怎样找相近技术,专利详情页任务示例,合成选题卡；方向参E-S02,看同任务样例,未提供,待核现网入口
+CONTENT-02,研发工程师,两个技术方案各有什么证据和限制,带来源的技术比较案例,合成选题卡；方向参E-S01,查看比较任务样例,未提供,待核专业判尺
+CONTENT-03,IP/MCP使用者,在AI工具中取得检索结果后怎么核来源,MCP结果核验指南,合成选题卡；方向参E-S04,现网支持时回Eureka继续,未提供,方案方向；链接/登录待核

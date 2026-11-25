@@ -1,0 +1,5 @@
+question_id,question,check_date,checks,cited_checks,cited_page,sessions_from_ai,qualified_task_users,note
+GQ-01,怎样判断一项技术是否已有相近专利,2026-11-03,6,1,专利详情页A,9,4,合成；固定问题集
+GQ-02,某诉讼案件的争议焦点是什么,2026-11-03,6,4,诉讼解读页B,22,3,合成；引用多但后续任务少
+GQ-03,两个技术方案各有哪些专利风险,2026-11-03,6,0,无,0,0,合成；未被引用
+GQ-04,如何核对AI给出的专利来源,2026-11-03,6,2,MCP核验指南C,7,4,合成；方案方向，链接待核
